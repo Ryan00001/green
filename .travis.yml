@@ -7,9 +7,9 @@ services:
   
 before_install:
   - docker build -t ryan000011/green .
-  - docker run -d -p 127.0.0.1:80:4567 ryan000011/green /bin/sh -c "cd /root/ryan000011; ant; ant test;"
+  - docker run -d -p 127.0.0.1:80:4567 ryan000011/green /bin/sh -c "ant; ant test;"
   - docker ps -a
-  - docker run ryan000011/green /bin/sh -c "cd /root/ryan000011; ant; ant test;"
+  - docker run ryan000011/green /bin/sh -c "ant; ant test;"
 
 script:
  - ant;
