@@ -8,6 +8,6 @@ services:
 before_install:
   - docker build -t dg
 
-script
+script:
   - docker run -d --name cont dg /bin/sh -c "ant; ant test;"
   - docker logs -f run
