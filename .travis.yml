@@ -6,8 +6,8 @@ services:
   - docker
   
 before_install:
-  - docker build -t dg .
+  - docker build -t dockergreen .
 
 script:
-  - docker run -d --name cont dg /bin/sh -c "ant; ant test;"
-  - docker logs -f cont
+  - docker run -d --name container dockergreen /bin/sh -c "ant; ant test;"
+  - docker logs --follow --details container
